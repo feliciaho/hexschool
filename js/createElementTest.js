@@ -1,29 +1,23 @@
-// 選取em的元素塞入字串
-// 並且使用for迴圈塞入不同字串
-var el = document.querySelectorAll(".titleClass em");
-el[0].textContent = "Hello World";
-for (let i = 0; i < el.length; i++) {
-  el[i].textContent = "Hello World" + i;
+// 用createElement創建元素並用appendChild加入至document
+let str = document.createElement("em");
+str.textContent = "Hello World";
+document.querySelector(".titleClass").appendChild(str);
+
+// 用createElement創建元素並用appendChild加入至document
+// 用for迴圈把其他農夫名加入至li
+let farm = [
+  {
+    farm_name: "查理",
+    pet: "貓",
+  },
+  {
+    farm_name: "戴維",
+    pet: "狗",
+  },
+];
+
+for (let i = 0; i < farm.length; i++) {
+  let str2 = document.createElement("li");
+  str2.textContent = farm[i].farm_name;
+  document.querySelector(".farmList").appendChild(str2);
 }
-console.log(el);
-
-// 選取a元素並將連結網址塞入a裡
-let el2 = document.querySelector(".link a");
-console.log(el2);
-el2.setAttribute("href", "https://www.google.com");
-
-let el4 = document.querySelector(".link a").getAttribute("href");
-console.log(el4);
-
-//選取div id 換css樣式
-let el3 = document.querySelector(".color");
-// el3.setAttribute('style', 'color: red;');
-el3.setAttribute("id", "color");
-
-// 選取元素並用innerHtml增加東西
-let el5 = document.querySelector(".innerTest");
-let link2 = "https://www.google.com";
-let name2 = "Hello World";
-
-console.log(el5.innerHTML);
-el5.innerHTML = '<a href="'+link2+'">'+name2+'</a>'
