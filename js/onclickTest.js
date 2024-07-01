@@ -12,7 +12,7 @@ document.querySelector(".btn").onclick =function(e){
 
 document.querySelector(".btn").onclick =function(e){
   alert("Hello World2");
-  console.log(e);
+  console.log(e.target);
 }
 
 // 使用addEventListener監聽點擊事件
